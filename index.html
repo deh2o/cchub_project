@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Calculator</title>
+<style>
+body {background-color: ;}
+#calc {border: 2px solid powderblue; margin: 50px; padding-top: 10%; padding-bottom: 10%; padding-left: 30%; padding-right: 30%;  }
+footer {text-align: center;}
+</style>
+</head>
+<body>
+	<div id="calc">
+		<h2>Simple Calculator</h2><br>
+		<input type="text" class="Values" id="val_1" placeholder="Input Value">
+		<br><br>
+		<input type="text" class="Values" id="val_2" placeholder="Input Value">
+		<br><br>
+		<select id="options">
+			<option value="">Select</option>
+			<option value="division">Division</option>
+			<option value="multiply">Multiply</option>
+			<option value="addition">Addition</option>
+			<option value="subtract">Subtraction</option>
+		</select>
+		<input type="submit" onclick="outputs()" value="Calculate">
+		<br/>
+		<div id="answer">
+			<h5>ANSWER <div id="result"></div></h5>
+		</div>
+	</div>
+	<footer>2020 all Rights Reserved | | created by Agha Idam Walter (H2O)</footer>
+<script>
+function outputs(){
+var val_1= parseFloat(document.getElementById("val_1").value);
+var val_2= parseFloat(document.getElementById("val_2").value);
+var options=document.getElementById("options").value;
+var result;
+if(options=='addition'){
+result=val_1+val_2;
+}else if(options=='multiply'){
+result=val_1*val_2;
+}else if(options=='division'){
+result=val_1/val_2;
+}else{
+result=val_1-val_2;
+}
+document.getElementById("result").innerHTML=result;
+}
+</script>
+</body>
+</html>
